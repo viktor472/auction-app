@@ -1,9 +1,14 @@
 import { Text, View, StyleSheet, Image, TouchableOpacity, } from "react-native";
+import { useNavigation } from '@react-navigation/native';
+
 
 export const Item = ({ title, info, price, img }) => {
+
+  const navigation = useNavigation();
   return (
     <>
-      <TouchableOpacity activeOpacity={0.9} onPress={()=>{ console.log("hellos")}} style={styles.container}>
+ {/*  send id then with that id do a cal funtion wit that id */}
+      <TouchableOpacity activeOpacity={0.9} onPress={()=>{ navigation.navigate('SelectedItem', {title: title, info:info,price:price,})}} style={styles.container}>
         <Image
           style={styles.Image}
           source={{
@@ -24,7 +29,7 @@ const styles = StyleSheet.create({
   container: {
     display: "flex",
     flexDirection: "row",
-    margin: 10,
+    margin: 5,
     backgroundColor: "#ffffff",
     borderRadius: 10,
   },
