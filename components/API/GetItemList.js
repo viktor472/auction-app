@@ -1,26 +1,9 @@
-{
-  /* 
-<View style={styles.container}>
-    <Image
-        style={styles.Image}
-        source={{
-            uri: 'https://upload.wikimedia.org/wikipedia/commons/b/bc/Juvenile_Ragdoll.jpg',
-        }}/>
-    <View style={styles.infocontainer}>
-        <Text style={styles.infotext}>Fredrik</Text>
-        <Text style={styles.infotext}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse at cursus arcu, vitae convallis felis.</Text>
-        <Text style={styles.price}>200 kr</Text>
-        </View> 
-</View> 
-*/
-}
-
-import { Text, View, StyleSheet, Image } from "react-native";
+import { Text, View, StyleSheet, Image, TouchableOpacity, } from "react-native";
 
 export const Item = ({ title, info, price, img }) => {
   return (
     <>
-      <View style={styles.container}>
+      <TouchableOpacity activeOpacity={0.9} onPress={()=>{ console.log("hellos")}} style={styles.container}>
         <Image
           style={styles.Image}
           source={{
@@ -32,7 +15,7 @@ export const Item = ({ title, info, price, img }) => {
           <Text style={styles.infotext}>{info}</Text>
           <Text style={styles.price}>{price} kr</Text>
         </View>
-      </View>
+      </TouchableOpacity>
     </>
   );
 };
@@ -57,8 +40,6 @@ const styles = StyleSheet.create({
   Image: {
     width: 150,
     height: 150,
-    borderTopStartRadius: 10,
-    borderBottomLeftRadius: 10,
   },
   price: {
     color: "green",
