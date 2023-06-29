@@ -1,14 +1,23 @@
-import { Text, View, StyleSheet, Image, TouchableOpacity, } from "react-native";
-import { useNavigation } from '@react-navigation/native';
-
+import { Text, View, StyleSheet, Image, TouchableOpacity } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 
 export const Item = ({ title, info, price, img }) => {
-
   const navigation = useNavigation();
   return (
     <>
- {/*  send id then with that id do a cal funtion wit that id */}
-      <TouchableOpacity activeOpacity={0.9} onPress={()=>{ navigation.navigate('SelectedItem', {title: title, info:info,price:price,})}} style={styles.container}>
+      {/*  send id then with that id do a cal funtion wit that id */}
+      <TouchableOpacity
+        activeOpacity={0.9}
+        onPress={() => {
+          navigation.navigate("SelectedItem", {
+            title: title,
+            info: info,
+            price: price,
+            img: img,
+          });
+        }}
+        style={styles.container}
+      >
         <Image
           style={styles.Image}
           source={{
