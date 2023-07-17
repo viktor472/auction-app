@@ -1,6 +1,6 @@
 # auction-app
 
-Fore printing all text info do flatlist insted of text
+An auctioning app, using react native. Weare users can upload posts weare then other users can upp the price in an auction like manor.
 
 ## Goal
 
