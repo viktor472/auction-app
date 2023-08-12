@@ -15,4 +15,5 @@ An auctioning app, using react native. Weare users can upload posts weare then o
 - Crud funktionalety
   - For simple in code server
   - For simple server
-    (Done) Connect to server with mongoDB
+
+(Done) Connect to server with mongoDB
