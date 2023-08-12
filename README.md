@@ -4,11 +4,11 @@ An auctioning app, using react native. Weare users can upload posts weare then o
 
 ## Requirements
 
-- Use react native for android (Done)
+- (Done) Use react native for android
 - Crud functionality
-- Use StyleSheet (Done)
-- Connect to server (no midle weare req) (Done)
-- Navigate betwene multiple screens (Done)
+- (Done) Use StyleSheet
+- (Done) Connect to server (no midle weare req)
+- (Done) Navigate betwene multiple screens
 
 ## Todo List
 
