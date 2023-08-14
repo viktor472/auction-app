@@ -5,7 +5,7 @@
 import { Text, View, StyleSheet, Image } from "react-native";
 
 export const SelectedItem = ({ route }) => {
-  const { title, info, price, img } = route.params;
+  const { title, description, price, img } = route.params;
   return (
     <>
       <Image
@@ -24,7 +24,7 @@ export const SelectedItem = ({ route }) => {
       >
         <Text style={styles.heading}>{title}</Text>
         <Text style={styles.price}>{price} kr</Text>
-        <Text style={styles.infotext}>{info}</Text>
+        <Text style={styles.infotext}>{description}</Text>
       </View>
     </>
   );

@@ -1,7 +1,7 @@
 import { Text, View, StyleSheet, Image, TouchableOpacity } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
-export const Item = ({ title, info, price, img }) => {
+export const Item = ({ title, description, price, img }) => {
   const navigation = useNavigation();
   return (
     <>
@@ -11,7 +11,7 @@ export const Item = ({ title, info, price, img }) => {
         onPress={() => {
           navigation.navigate("SelectedItem", {
             title: title,
-            info: info,
+            description: description,
             price: price,
             img: img,
           });
@@ -26,7 +26,7 @@ export const Item = ({ title, info, price, img }) => {
         />
         <View style={styles.infocontainer}>
           <Text style={styles.infotext}>{title}</Text>
-          <Text style={styles.infotext}>{info}</Text>
+          <Text style={styles.infotext}>{description}</Text>
           <Text style={styles.price}>{price} kr</Text>
         </View>
       </TouchableOpacity>
