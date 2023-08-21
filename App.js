@@ -1,7 +1,7 @@
 //packet imports
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { NavigationContainer } from "@react-navigation/native";
-import { createStackNavigator } from '@react-navigation/stack';
+import { createStackNavigator } from "@react-navigation/stack";
 import Ionicons from "react-native-vector-icons/Ionicons";
 // Screens
 import { HomeScreen } from "./components/HomeScreen/homescreen";
@@ -13,27 +13,25 @@ const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
 
 export default function App() {
-  return (<>
-    <NavigationContainer>
-
-      <Stack.Navigator>
-        <Stack.Screen
-          name="Home"
-          component={Home}
-          options={{ headerShown: false }}
-        />
-        <Stack.Screen name="SelectedItem" component={SelectedItem} />
-      </Stack.Navigator>
-
-
-    </NavigationContainer>
+  return (
+    <>
+      <NavigationContainer>
+        <Stack.Navigator>
+          <Stack.Screen
+            name="Home"
+            component={Home}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen name="SelectedItem" component={SelectedItem} />
+        </Stack.Navigator>
+      </NavigationContainer>
     </>
   );
 }
 
-function Home (){
-  return(
-      <Tab.Navigator 
+function Home() {
+  return (
+    <Tab.Navigator
       screenOptions={({ route }) => ({
         tabBarIcon: ({ focused, color, size }) => {
           let iconName;
@@ -46,7 +44,6 @@ function Home (){
             iconName = focused ? "home" : "home-outline";
           }
 
-          // You can return any component that you like here!
           return <Ionicons name={iconName} size={size} color={color} />;
         },
         tabBarActiveTintColor: "tomato",
@@ -58,4 +55,4 @@ function Home (){
       <Tab.Screen name="Settings" component={SettingsScreen} />
     </Tab.Navigator>
   );
-};
+}
