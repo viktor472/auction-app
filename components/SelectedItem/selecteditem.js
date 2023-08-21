@@ -1,11 +1,18 @@
-{
-  /*  send id then with that id do a cal funtion wit that id */
-}
-
 import { Text, View, StyleSheet, Image, Button } from "react-native";
+import api from "../API/Data";
+
+//------------Delete item------------
+export const deleteItemHandeler = async (id) => {
+  try {
+    const res = await api.delete("/items/" + id);
+    res.json;
+  } catch (error) {
+    console.log(error);
+  }
+};
 
 export const SelectedItem = ({ route }) => {
-  const { title, description, price } = route.params;
+  const { title, description, price, id } = route.params;
 
   return (
     <>
@@ -31,7 +38,7 @@ export const SelectedItem = ({ route }) => {
         <Button
           title="Delete post"
           color="red"
-          onPress={() => deleteTaskHandeler(id)}
+          onPress={() => deleteItemHandeler(id)}
         ></Button>
       </View>
     </>

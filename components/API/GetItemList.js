@@ -1,11 +1,10 @@
 import { Text, View, StyleSheet, Image, TouchableOpacity } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
-export const Item = ({ title, description, price, img }) => {
+export const Item = ({ title, description, price, img, id }) => {
   const navigation = useNavigation();
   return (
     <>
-      {/*  send id then with that id do a cal funtion wit that id */}
       <TouchableOpacity
         activeOpacity={0.9}
         onPress={() => {
@@ -14,6 +13,7 @@ export const Item = ({ title, description, price, img }) => {
             description: description,
             price: price,
             img: img,
+            id: id,
           });
         }}
         style={styles.container}

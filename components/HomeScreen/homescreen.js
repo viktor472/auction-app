@@ -1,35 +1,27 @@
 import React, { useEffect, useState } from "react";
-import {
-  StyleSheet,
-  ScrollView,
-  FlatList,
-  View,
-  SafeAreaView,
-} from "react-native";
+import { StyleSheet, FlatList, View, SafeAreaView } from "react-native";
+import { useFocusEffect } from "@react-navigation/native";
 import { Item } from "../API/GetItemList";
 import api from "../API/Data";
-import axios from "axios";
 
 export function HomeScreen() {
   const [item, setItem] = useState([]);
 
-  const getAd = async () => {
-    try {
-      const response = await api.get("/items");
-      setItem(response.data);
-    } catch (error) {
-      console.log(error);
-    }
-  };
+  useFocusEffect(() => {
+    const getAd = async () => {
+      try {
+        const response = await api.get("/items");
+        setItem(response.data);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    getAd();
 
-  useEffect(() => {
-    getAd(setItem);
-  }, []);
-
-  //------------Delete a new task------------
-  const deleteTaskHandeler = () => {
-    api.delete("/items/");
-  };
+    return () => {
+      // cleanup function
+    };
+  });
 
   return (
     <>
@@ -45,6 +37,7 @@ export function HomeScreen() {
                 img={
                   "https://upload.wikimedia.org/wikipedia/commons/b/bc/Juvenile_Ragdoll.jpg"
                 }
+                id={item._id}
               />
             )}
             keyExtractor={(item) => item._id}
