@@ -1,5 +1,9 @@
+//import packeges
 import { Text, View, StyleSheet, Image, TouchableOpacity } from "react-native";
 import { useNavigation } from "@react-navigation/native";
+
+// create the item Model wich the home scren will then use to
+//print the items and blend with the data wich the server provides
 
 export const Item = ({ title, description, price, img, id }) => {
   const navigation = useNavigation();

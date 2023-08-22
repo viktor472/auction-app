@@ -1,5 +1,5 @@
 //Import packeges
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { StyleSheet, FlatList, View, SafeAreaView } from "react-native";
 
 //import from other files
@@ -10,8 +10,9 @@ import api from "../API/Data";
 import { useFocusEffect } from "@react-navigation/native";
 
 export function HomeScreen() {
+  // List of posts are stored in this varieble
   const [item, setItem] = useState([]);
-
+  // Uppdate get req every time the home page is vewd
   useFocusEffect(() => {
     const getAd = async () => {
       try {
@@ -23,9 +24,10 @@ export function HomeScreen() {
     };
     getAd();
 
-    return () => {
-      // cleanup function
-    };
+    /*  Test if requierd
+  return () => {
+  };
+  */
   });
 
   return (
@@ -39,6 +41,7 @@ export function HomeScreen() {
                 title={item.title}
                 description={item.description}
                 price={item.price}
+                // Using same image till i lern how to storm an image in mongo db
                 img={
                   "https://upload.wikimedia.org/wikipedia/commons/b/bc/Juvenile_Ragdoll.jpg"
                 }

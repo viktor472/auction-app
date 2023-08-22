@@ -1,3 +1,4 @@
+//import packeges
 import React, { useState } from "react";
 import {
   View,
@@ -10,6 +11,7 @@ import {
 import api from "../API/Data";
 
 export function AddItem() {
+  // Variebles wear the data is stored
   const [titel, onChangeTitel] = useState("");
   const [price, onChangePrice] = useState();
   const [description, onChangeDescription] = useState("");

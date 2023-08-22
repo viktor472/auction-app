@@ -1,15 +1,17 @@
 //import packeges
 import { Text, View, StyleSheet, Image, Button } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 
 //Import from other files
 import api from "../API/Data";
 
+//------------Handelers--------------
 //------------Delete item------------
 export const deleteItemHandeler = async (id) => {
   try {
     const res = await api.delete("/items/" + id);
     res.json;
-    navigation.navigate("HomeScreen");
+    navigation.navigate("SelectedItem");
   } catch (error) {
     console.log(error);
   }
