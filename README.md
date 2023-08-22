@@ -5,9 +5,12 @@ An auctioning app, using react native. Weare users can upload posts weare then o
 ## Run projekt
 
 - npm i
-- .env:
+- create .env with these variebles
+
   - PORT = 3000
   - DB_URL = DB_URL = mongodb+srv://basse:<Password>@test-cluster.tw3bfi8.mongodb.net/
+
+- npx expo start
 
 ## Requirements
 
