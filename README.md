@@ -11,11 +11,6 @@ An auctioning app, using react native. Weare users can upload posts weare then o
 ## Run projekt
 
 - npm i
-- create <ins>.env</ins> file with these variebles
-
-  - PORT = 3000
-  - DB_URL = mongodb+srv://basse:<Password>@test-cluster.tw3bfi8.mongodb.net/
-
 - npx expo start
 
 ## Requirements
@@ -24,4 +19,4 @@ An auctioning app, using react native. Weare users can upload posts weare then o
 - (Done)some Crud functionality
 - (Done) Use StyleSheet
 - (Done) Connect to server (no midle weare req)
-- (Done) Navigate betwene multiple screens
+- (Done) Navigate betwen multiple screens
