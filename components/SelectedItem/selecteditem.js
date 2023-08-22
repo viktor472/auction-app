@@ -1,4 +1,7 @@
+//import packeges
 import { Text, View, StyleSheet, Image, Button } from "react-native";
+
+//Import from other files
 import api from "../API/Data";
 
 //------------Delete item------------
@@ -6,6 +9,18 @@ export const deleteItemHandeler = async (id) => {
   try {
     const res = await api.delete("/items/" + id);
     res.json;
+    navigation.navigate("HomeScreen");
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+//------------Uppdate item------------
+export const uppdateItemHandler = async (id) => {
+  try {
+    await api.patch("/items/" + id, {
+      price: price + 10,
+    });
   } catch (error) {
     console.log(error);
   }
@@ -33,7 +48,10 @@ export const SelectedItem = ({ route }) => {
         <Text style={styles.heading}>{title}</Text>
         <Text style={styles.price}>{price} kr</Text>
         <Text style={styles.infotext}>{description}</Text>
-        <Button title="Buda 10 kr"></Button>
+        <Button
+          title="Buda 10 kr"
+          onPress={() => uppdateItemHandler(id)}
+        ></Button>
         <Button title="Buda 100 kr"></Button>
         <Button
           title="Delete post"

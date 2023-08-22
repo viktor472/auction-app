@@ -1,8 +1,13 @@
+//Import packeges
 import React, { useEffect, useState } from "react";
 import { StyleSheet, FlatList, View, SafeAreaView } from "react-native";
-import { useFocusEffect } from "@react-navigation/native";
+
+//import from other files
 import { Item } from "../API/GetItemList";
 import api from "../API/Data";
+
+//Navigations
+import { useFocusEffect } from "@react-navigation/native";
 
 export function HomeScreen() {
   const [item, setItem] = useState([]);

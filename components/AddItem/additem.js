@@ -7,13 +7,14 @@ import {
   Button,
   Text,
 } from "react-native";
+import api from "../API/Data";
 
 export function AddItem() {
   const [titel, onChangeTitel] = useState("");
-  const [price, onChangePrice] = useState("");
+  const [price, onChangePrice] = useState();
   const [description, onChangeDescription] = useState("");
 
-  const newitem = async () => {
+  const newitem = async (titel, price, description) => {
     try {
       api.post("/items", {
         titel: titel,
@@ -24,12 +25,11 @@ export function AddItem() {
       console.log(error);
     }
   };
-
   return (
     <>
       <View style={styles.container}>
         <SafeAreaView style={styles.subcontainer}>
-          <Text style={styles.title}>Skapa din annons</Text>
+          <Text style={styles.titel}>Skapa din annons</Text>
           <TextInput
             style={styles.input}
             onChangeText={onChangeTitel}
@@ -49,7 +49,11 @@ export function AddItem() {
             placeholder="price"
             keyboardType="numeric"
           />
-          <Button title="Post" color="black" onPress={() => newitem()} />
+          <Button
+            title="Post"
+            color="black"
+            onPress={() => newitem(titel, price, description)}
+          />
         </SafeAreaView>
       </View>
     </>
