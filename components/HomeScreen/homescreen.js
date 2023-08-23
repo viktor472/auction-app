@@ -38,7 +38,7 @@ export function HomeScreen() {
             data={item}
             renderItem={({ item }) => (
               <Item
-                title={item.title}
+                title={item.titel}
                 description={item.description}
                 price={item.price}
                 // Using same image till i lern how to storm an image in mongo db

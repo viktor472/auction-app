@@ -38,7 +38,7 @@ function Home() {
 
           if (route.name === "Hem") {
             iconName = focused ? "home" : "home-outline";
-          } else if (route.name === "Settings") {
+          } else if (route.name === "Inställningar") {
             iconName = focused ? "ios-list" : "ios-list-outline";
           } else if (route.name === "Ny annons") {
             iconName = focused ? "home" : "home-outline";
@@ -52,7 +52,7 @@ function Home() {
     >
       <Tab.Screen name="Hem" component={HomeScreen} />
       <Tab.Screen name="Ny annons" component={AddItem} />
-      <Tab.Screen name="Settings" component={SettingsScreen} />
+      <Tab.Screen name="Inställningar" component={SettingsScreen} />
     </Tab.Navigator>
   );
 }

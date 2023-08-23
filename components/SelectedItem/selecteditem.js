@@ -1,6 +1,6 @@
 //import packeges
 import { Text, View, StyleSheet, Image, Button } from "react-native";
-import { useNavigation } from "@react-navigation/native";
+/* import { useNavigation } from "@react-navigation/native"; */
 
 //Import from other files
 import api from "../API/Data";
@@ -11,14 +11,14 @@ export const deleteItemHandeler = async (id) => {
   try {
     const res = await api.delete("/items/" + id);
     res.json;
-    navigation.navigate("SelectedItem");
+    /*     navigation.navigate("SelectedItem"); */
   } catch (error) {
     console.log(error);
   }
 };
 
 //------------Uppdate item------------
-export const uppdateItemHandler = async (id) => {
+export const uppdateItemHandler = async (id, price) => {
   try {
     await api.patch("/items/" + id, {
       price: price + 10,
@@ -52,7 +52,7 @@ export const SelectedItem = ({ route }) => {
         <Text style={styles.infotext}>{description}</Text>
         <Button
           title="Buda 10 kr"
-          onPress={() => uppdateItemHandler(id)}
+          onPress={() => uppdateItemHandler({ id, price })}
         ></Button>
         <Button title="Buda 100 kr"></Button>
         <Button

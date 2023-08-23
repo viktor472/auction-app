@@ -81,7 +81,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#4444",
     backgroundColor: "#ffffff",
   },
-  title: {
+  titel: {
     margin: 20,
     fontSize: 20,
   },
