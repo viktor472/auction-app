@@ -21,7 +21,9 @@ An auctioning app, using react native. Weare users can upload posts weare then o
 - (Done) Connect to server (no midle weare req)
 - (Done) Navigate betwen multiple screens
 - 
-| Req   | Price     |
+| Req   | endpoint  |
 |-------|-----------|
 | Get   | /blogpost |
 | Post  | /blogpost |
+| Delete| /blogpost:id |
+| Get   | /blogpost:id |
