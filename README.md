@@ -28,5 +28,4 @@ http://localhost:${port}/
 |-------|-----------|
 | Get   | /blogpost |
 | Post  | /blogpost |
-| Delete| /blogpost:id |
-| Get   | /blogpost:id |
+| Delete| /blogpost:id|
