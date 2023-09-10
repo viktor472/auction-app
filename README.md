@@ -20,3 +20,8 @@ An auctioning app, using react native. Weare users can upload posts weare then o
 - (Done) Use StyleSheet
 - (Done) Connect to server (no midle weare req)
 - (Done) Navigate betwen multiple screens
+- 
+| Req   | Price     |
+|-------|-----------|
+| Get   | /blogpost |
+| Post  | /blogpost |
